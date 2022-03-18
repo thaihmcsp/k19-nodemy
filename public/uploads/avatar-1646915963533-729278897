@@ -1,0 +1,26 @@
+color: đổi màu chữ
+font-size: đổi cỡ chữ
+opacity : mức độ trong suốt
+line-height : độ cao văn bản
+background : nền
+background-color: màu nền
+background-image : ảnh nền
+border : đường viền
+border-color: màu viền
+border-width: độ rộng viền
+border-vị trí : vị trí viền
+border-radius: viền cong
+display : loại hiển thị
+    -display inline vs inline-block vs block
+text-align : sắp xếp nội dung
+list-style: kiểu danh sách
+text-decoration : none , bỏ gạch dưới thẻ a
+margin : căn lề 
+margin : top right bottom left;
+padding : thêm khoảng không
+đơn vị đo : px , %, , vh, vw
+:hover 
+:focus
+Cách lấy màu
+Các cách căn giữa margin : 0 auto
+căn text dọc bằng line-height

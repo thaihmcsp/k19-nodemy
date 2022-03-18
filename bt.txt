@@ -1,0 +1,7 @@
+làm chức năng xem , thêm sửa xóa user trên postman
+
+tạo user thì kiểm tra username đã có ai dùng chưa
+
+khi đổi password thì kiểm tra password cũ nhập đúng hay chưa
+
+khi xóa user cũng kiểm tra nhập đúng password chưa

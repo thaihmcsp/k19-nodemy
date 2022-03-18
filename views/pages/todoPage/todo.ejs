@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>todo</h1>
+  <input type="text" name="" id="name" placeholder="name">
+  <select name="" id="status">
+    <option value="todo">todo</option>
+    <option value="doing">doing</option>
+    <option value="done">done</option>
+  </select>
+  <input type="date" id="deadline">
+  <button onclick="add()">click</button>
+  <% status.map(function(data){ %>
+    <h3><%= data %></h3>
+    <table>
+
+      <% listTodo.map(function(value){ %>
+        <% if(value.status === data){ %>
+          <tr>
+            <td><%= value.name %></td>
+            <td><%= value.deadline %></td>
+          </tr>
+        <% } %>
+      <%}) %>
+    </table>
+  <% }) %>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/public/js/todoData.js"></script>
+</html>

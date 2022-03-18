@@ -1,0 +1,11 @@
+<% list.map(function(value, index){ %>
+  <tr> 
+    <td><%= index +1 %> </td>
+    <td><%= value.username %></td> 
+    <td><%= value.password %></td>
+    <td>
+      <button>update</button>
+      <button class="delete" onclick="deleteUser('<%= value._id %>')">delete</button>
+    </td>
+  </tr>
+<% }) %>

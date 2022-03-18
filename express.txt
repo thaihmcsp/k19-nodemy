@@ -1,0 +1,154 @@
+npm init          khởi tạo dự án
+
+npm i express
+
+express()         tạo app
+
+.listen()         tạo cổng để gửi reponse nhận request
+
+res.send          gửi response text
+                  gửi html
+
+res.sendFile      gửi reponse dạng file
+                  lưu ý phải dùng link tuyệt đối
+
+res.download      download file chỉ định
+
+res.json()        gửi data, dữ liệu dạng JSON
+
+res.redirect()    định tuyến sang link khác
+
+=====================================================
+
+query             data truyền trên url
+                  ?key1=value&key2=value2
+                  server không cần setting gì vẫn nhận query
+                  có thể tùy ý dùng hoặc không dùng
+
+req.query         cú pháp bắt query trả về từ client
+
+======================================================
+
+params            data truyền trên url
+                  đã set thì buộc phải dùng 
+                  người dùng chỉ việc nhập value
+
+/link/:key        key được cố định trên đường dẫn
+
+req.params
+
+======================================================
+
+restful-API       quy ước chung giữa các lập trình viên với nhau
+
+bảng data phải tường minh trên đường dẫn
+
+GET                 xem data, lấy dữ data
+xem nhiều data      không cần quy định cụ thể id
+                    /user
+
+xem 1 data cụ thể   thì phải dùng params để truyền id lên url 
+                    /user/:id
+
+POST                thêm mới data
+                    /user
+
+PUT                 ghi đè data, update data
+update 1 data cụ thể
+                    /user/:id
+
+DELETE              xóa data
+xóa 1 data cụ thể   /user/:id
+
+=====================================================
+
+1 API được quy định bởi method và path
+=> gửi req phải đúng method và path thì mới trả data theo yêu cầu
+
+====================================================
+
+link jquery
+
+$.ajax({                      gui request
+  url:'path',
+  type: 'method',
+  data: {}      // body
+})
+.then()                       nhận response
+.catch()
+
+================================================
+jsonwebtoken
+sign(data, pass, {expireIn: })      taoj token
+
+verify(token, pass)                 dich data
+
+================================================
+bcrypt  
+mã hóa mật khẩu và không cũng cấp chức năng dịch ngược mã hóa
+
+hash                                tạo mã hóa mk
+
+compare                             check mk, chỉ trả về true false
+
+=================================================
+async await để xử lý promise
+
+async function khiến function trả ra promise
+
+await chỉ hợp lệ khi dùng trong async function
+await khiến các dòng code bên dưới phải đợi promise chạy xong mới được chạy tiếp
+
+
+khi dùng async await thì phải check lỗi bằng try catch
+loaij bỏ khả năng bị promise hell
+
+====================================================
+multer
+
+npm i multer
+
+const upload = multer({ dest: 'uploads/' })           setup vi tri lưu file
+
+router.post('/', upload.single('name'),function(req,res){
+  req.file              để xem file upload
+  req.body              để nhận text
+})                      name phải khớp với form
+
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'path')
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+    cb(null, file.fieldname + '-' + uniqueSuffix + duoi file)
+  }
+})
+
+const upload = multer({ storage: storage })
+
+let form = $('form')[0]
+let formData =  FormData(form)
+
+ $.ajax({
+   data: formData,
+   processData: false,
+   contentType: false
+ })
+
+ ==============================================
+
+ npm i ejs
+
+ app.set('view engine', 'ejs')
+
+ app.get('/',function(req,res){
+   res.render('')
+ })
+
+ <%=  %>                  gọi biến đính kèm ejs
+<%- %>                    gọi biến và dịch sang HTML
+
+<%  %>                    dùng các hàm logic
+                          map, filter, sort, toán tử 3 ngôi

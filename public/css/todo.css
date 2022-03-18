@@ -1,0 +1,4 @@
+.listData{
+  display: flex;
+  justify-content: space-evenly;
+}
