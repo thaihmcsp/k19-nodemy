@@ -1,6 +1,4 @@
-const mongoose = require('mongoose')                // gọi mongoose vào để dùng'
-
-mongoose.connect('mongodb://localhost/K20');
+const mongoose = require('./connectDB')                // gọi mongoose vào để dùng'
 
 const ListSchema = mongoose.Schema({
   listName: String,
@@ -13,3 +11,4 @@ const ListSchema = mongoose.Schema({
 const ListModel = mongoose.model('list', ListSchema)
 
 module.exports = ListModel
+

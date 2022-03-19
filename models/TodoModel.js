@@ -1,7 +1,4 @@
-const mongoose = require('mongoose')                // gọi mongoose vào để dùng'
-
-mongoose.connect('mongodb://localhost/K20');
-
+const mongoose = require('./connectDB')   
 const TodoSchema = mongoose.Schema({
   status: String,
   name: String,

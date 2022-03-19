@@ -1,7 +1,5 @@
-const mongoose = require('mongoose')                // gọi mongoose vào để dùng'
-
-mongoose.connect('mongodb://localhost/K20');        // liên kết nodejs với mongoDB
-
+const mongoose = require('./connectDB')  
+ 
 const UserSchema = mongoose.Schema({                // tạo ra cấu trúc bảng data
   username: String,
   password: String,

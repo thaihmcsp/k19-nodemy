@@ -1,6 +1,7 @@
 const express = require('express')  // gọi express vào để dùng
 const app = express()               // triển khai function để tạo app
 const path = require('path')
+require('dotenv').config()
 const UserRouter = require('./routers/userRoute')
 const TodoRouter = require('./routers/todoRouter')
 const IndexRouter = require('./routers/indexRouter')
@@ -19,4 +20,4 @@ app.use('/list', ListRouter)
 app.use('/', IndexRouter)
 
 
-app.listen(3000)                    // cấp cho app cổng nghe và nói
+app.listen(process.env.PORT || 3000)                    // cấp cho app cổng nghe và nói
